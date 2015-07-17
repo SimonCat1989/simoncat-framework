@@ -2,7 +2,7 @@ package com.simoncat.framework.excel;
 
 import java.util.Iterator;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -11,7 +11,7 @@ import org.junit.Test;
 public class ExcelOperatorTest {
 
 	private static final ExcelParameter TEST_DOC = new ExcelParameter(
-			"./src/test/resources", "test.xls");
+			"./src/test/resources", "test.xlsx");
 
 	@Test
 	public void test() {
@@ -23,7 +23,7 @@ public class ExcelOperatorTest {
 			Row row = sheet.getRow(i);
 			Iterator it = row.cellIterator();
 			while (it.hasNext()) {
-				HSSFCell cell = (HSSFCell) it.next();
+				Cell cell = (Cell) it.next();
 				try {
 					cellNovalue = cell.getStringCellValue();
 				} catch (IllegalStateException e) {
