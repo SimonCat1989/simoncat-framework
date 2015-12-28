@@ -1,4 +1,4 @@
-package com.simoncat.framework.folder.api;
+package com.simoncat.framework.filemanager.api;
 
 import java.util.Collection;
 

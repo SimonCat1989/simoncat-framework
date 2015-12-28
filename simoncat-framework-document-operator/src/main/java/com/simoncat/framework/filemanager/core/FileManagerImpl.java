@@ -1,4 +1,4 @@
-package com.simoncat.framework.folder.core;
+package com.simoncat.framework.filemanager.core;
 
 import java.io.File;
 import java.util.Arrays;
@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.simoncat.framework.folder.api.FileManager;
+import com.simoncat.framework.filemanager.api.FileManager;
 
 public class FileManagerImpl implements FileManager {
 

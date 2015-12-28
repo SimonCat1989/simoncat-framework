@@ -1,9 +1,9 @@
-package com.simoncat.framework.folder.config;
+package com.simoncat.framework.filemanager.config;
 
 import org.springframework.context.annotation.Bean;
 
-import com.simoncat.framework.folder.api.FileManager;
-import com.simoncat.framework.folder.core.FileManagerImpl;
+import com.simoncat.framework.filemanager.api.FileManager;
+import com.simoncat.framework.filemanager.core.FileManagerImpl;
 
 public class FileConfig {
 
