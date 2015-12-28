@@ -2,13 +2,12 @@ package com.simoncat.framework.excel.api;
 
 import java.io.File;
 
+import javax.annotation.Nullable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-
-import com.sun.istack.internal.Nullable;
-
 
 @Data
 @RequiredArgsConstructor
@@ -21,7 +20,7 @@ public class Parameter {
 	@NonNull
 	private final String fileName;
 		
-	@NonNull
+	@Nullable
 	private ExcelType type = ExcelType.XLS;
 	
 	@Nullable
