@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.simoncat.framework</groupId>
-	<artifactId>simoncat-framework-document-operator</artifactId>
+	<artifactId>simoncat-framework-lucene</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>simoncat-framework-document-operator</name>
+	<name>simoncat-framework-lucene</name>
 
 	<properties>
 		<skip.all.test.cases>true</skip.all.test.cases>
@@ -35,22 +35,6 @@
 			<version>1.16.4</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>3.12</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>3.12</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-examples</artifactId>
-			<version>3.12</version>
-		</dependency>
-		
 		<!-- Simple Log for Java -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -62,7 +46,7 @@
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.13</version>
 		</dependency>
-		
+
 		<!-- Java Annotation -->
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
@@ -91,6 +75,28 @@
 			<artifactId>spring-test</artifactId>
 			<version>4.1.1.RELEASE</version>
 		</dependency>
+
+		<!-- Lucene -->
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>5.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-highlighter</artifactId>
+			<version>5.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-memory</artifactId>
+			<version>5.4.0</version>
+		</dependency>
+		<dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-common</artifactId>
+            <version>5.4.0</version>
+        </dependency>
 	</dependencies>
 
 	<build>
