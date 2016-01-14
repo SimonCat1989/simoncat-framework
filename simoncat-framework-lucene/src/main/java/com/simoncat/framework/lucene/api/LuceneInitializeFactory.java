@@ -2,15 +2,31 @@ package com.simoncat.framework.lucene.api;
 
 import java.io.IOException;
 
-public interface LuceneInitializeFactory {
+import com.simoncat.framework.lucene.core.LuceneHelperImpl;
 
-	void initialize() throws IOException;
+public class LuceneInitializeFactory {
 
-	void initialize(String filePath) throws IOException;
+	public static LuceneHelper createInstanceWithMemoryOnly() throws IOException {
+		return createInstanceWithMemoryOnly(false);
+	}
 
-	void initializeWithResourceFolder() throws IOException;
+	public static LuceneHelper createInstanceWithMemoryOnly(boolean isUpdateMode) throws IOException {
+		return new LuceneHelperImpl(true, null, isUpdateMode);
+	}
 
-	void initializeWithResourceFolder(ClassLoader loader) throws IOException;
+	public static LuceneHelper createInstanceWithFileSystem(String indexFolder) throws IOException {
+		return createInstanceWithFileSystem(indexFolder, false);
+	}
 
-	void initializeWithResourceFolder(ClassLoader loader, String indexFolderPath) throws IOException;
+	public static LuceneHelper createInstanceWithFileSystem(String indexFolder, boolean isUpdateMode) throws IOException {
+		return new LuceneHelperImpl(false, indexFolder, isUpdateMode);
+	}
+
+	public static LuceneHelper createInstanceWithResourceFolder(ClassLoader loader, String indexFolder) throws IOException {
+		return createInstanceWithResourceFolder(loader, indexFolder, false);
+	}
+
+	public static LuceneHelper createInstanceWithResourceFolder(ClassLoader loader, String indexFolder, boolean isUpdateMode) throws IOException {
+		return new LuceneHelperImpl(false, loader.getResource(indexFolder).getFile(), isUpdateMode);
+	}
 }
