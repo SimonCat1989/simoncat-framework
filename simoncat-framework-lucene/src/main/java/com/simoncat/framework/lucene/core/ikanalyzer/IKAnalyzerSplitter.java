@@ -27,6 +27,7 @@ public class IKAnalyzerSplitter {
 	public static List<String> split(String text, boolean isMaxWordLength) {
 		try (StringReader reader = new StringReader(text)) {
 			List<String> resultList = Lists.newArrayList();
+			@SuppressWarnings("resource")
 			Analyzer analyzer = new IKAnalyzer(isMaxWordLength);
 			TokenStream ts = analyzer.tokenStream("", reader);
 			CharTermAttribute term = ts.getAttribute(CharTermAttribute.class);

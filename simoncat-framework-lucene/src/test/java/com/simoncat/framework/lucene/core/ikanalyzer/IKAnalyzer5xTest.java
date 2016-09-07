@@ -22,6 +22,7 @@ public class IKAnalyzer5xTest {
 
 	@Test
 	public void testIKAnalyzer5x() throws IOException {
+		@SuppressWarnings("resource")
 		Analyzer analyzer = new IKAnalyzer5x(true);
 		TokenStream ts = analyzer.tokenStream("field", new StringReader("IK Analyzer 是一个开源的，基于java语言开发的轻量级的中文分词工具包。"
 				+ "从2006年12月推出1.0版开始， IKAnalyzer已经推出了4个大版本。" + "最初，它是以开源项目Luence为应用主体的，" + "结合词典分词和文法分析算法的中文分词组件。从3.0版本开始，"
