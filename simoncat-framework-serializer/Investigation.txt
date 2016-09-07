@@ -1,0 +1,7 @@
+When we try to share data objects among different applications created by different develop language and depends on different environment.
+Use Protocol Buffer
+
+Protocol Buffer VS other ways.
+1. Java native way to serialize object. ==> Can only be deserialized in Java.
+2. Ad-hoc way such as using ';' or ',' as splitter to make 'XXX,YYY,ZZZ' ==> Not intuitive for developers.
+3. Convert to XML file or DB ==> Performance penalty. Since XML parsing need load whole file into memory.

@@ -6,12 +6,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.simoncat.framework.serializer.api.SimoncatSerializer;
+import com.simoncat.framework.serializer.core.SimoncatSerializerImpl;
 
 @Configuration
-public class SerializerConfig {
+public class SimoncatSerializerConfig {
 
 	@Bean
     public SimoncatSerializer serializer() throws IOException {
-		return null;
+		return new SimoncatSerializerImpl();
     }
 }

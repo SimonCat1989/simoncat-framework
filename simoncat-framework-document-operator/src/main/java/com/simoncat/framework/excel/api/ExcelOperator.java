@@ -7,4 +7,5 @@ public interface ExcelOperator {
 	void create(Parameter parameter, Job job);
 	
 	void update(Parameter parameter, Job job);
+	
 }
