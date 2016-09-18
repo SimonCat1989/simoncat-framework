@@ -175,11 +175,7 @@ public class ExcelOperatorImpl implements ExcelOperator {
 	}
 
 	private int getFirstRow(int headerLine) {
-		return (containsHeader(headerLine)) ? headerLine + 1 : 0;
-	}
-
-	private boolean containsHeader(int headerLine) {
-		return headerLine > ExcelCellMapping.NO_HEADER_ROW;
+		return (headerLine > ExcelCellMapping.NO_HEADER_ROW) ? headerLine + 1 : 0;
 	}
 
 	private Object[] getValueFromRow(List<ExcelCellMapping> mappingList, Row row) {
