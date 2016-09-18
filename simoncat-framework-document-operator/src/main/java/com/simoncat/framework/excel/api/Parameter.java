@@ -19,14 +19,18 @@ public class Parameter {
 
 	@NonNull
 	private final String fileName;
-		
+
 	@Nullable
 	private ExcelType type = ExcelType.XLS;
-	
+
 	@Nullable
 	private String password;
 
 	public String getFile() {
 		return filePath + File.separator + fileName;
+	}
+
+	public enum ExcelType {
+		XLS, XLSX
 	}
 }

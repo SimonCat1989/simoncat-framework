@@ -1,6 +1,7 @@
-package com.simoncat.framework.excel;
+package com.simoncat.framework.excel.core;
 
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 
@@ -15,15 +16,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.simoncat.framework.excel.api.ExcelOperator;
-import com.simoncat.framework.excel.api.ExcelType;
 import com.simoncat.framework.excel.api.Parameter;
 import com.simoncat.framework.excel.config.ExcelConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ExcelConfig.class)
-public class ExcelOperatorTest {
+public class ExcelOperatorImplTest {
 
-	private static final Parameter TEST_DOC = new Parameter("./src/test/resources", "test.xlsx");
+	private static final Parameter TEST_DOC = new Parameter("./src/test/resources", "test.xls");
 
 	@Autowired
 	private ExcelOperator excelOperator;
@@ -97,23 +97,30 @@ public class ExcelOperatorTest {
 			readData(document);
 		});
 	}
-	
+
 	@Test
 	public void testCreate() {
-		excelOperator.create(new Parameter("./src/test/resources", getCurrentTimeStamp() + "-test.xlsx", ExcelType.XLSX, null), document -> {
-			Sheet sheet = document.createSheet("TemplateSheet");
-			Row row = sheet.createRow(0);
-			for (int i = 0; i < 5; i++) {
-				Cell cell = row.createCell(i);
-				cell.setCellValue("Cell" + i);
-			}
-		});
+		excelOperator.create(new Parameter("./src/test/resources", getCurrentTimeStamp() + "-test.xlsx", Parameter.ExcelType.XLSX, null),
+				document -> {
+					Sheet sheet = document.createSheet("TemplateSheet");
+					Row row = sheet.createRow(0);
+					for (int i = 0; i < 5; i++) {
+						Cell cell = row.createCell(i);
+						cell.setCellValue("Cell" + i);
+					}
+				});
 	}
-	
+
 	private String getCurrentTimeStamp() {
 		SimpleDateFormat sdfDate = new SimpleDateFormat("yyyyMMddHHmmss-");
 		Date now = new Date();
 		String strDate = sdfDate.format(now);
 		return strDate;
+	}
+
+	@Test
+	public void testReadAll() {
+		Collection<SampleInstance> list = excelOperator.readAll(TEST_DOC, SampleInstance.class);
+		System.out.println(list.size());
 	}
 }
