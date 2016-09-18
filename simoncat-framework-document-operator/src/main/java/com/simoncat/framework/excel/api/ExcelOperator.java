@@ -1,12 +1,12 @@
 package com.simoncat.framework.excel.api;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.apache.poi.ss.usermodel.Workbook;
 
 public interface ExcelOperator {
 
-	<T> Collection<T> readAll(Parameter parameter, Class<T> instanceClass);
+	<T> List<T> readAll(Parameter parameter, Class<T> instanceClass);
 
 	void operation(Parameter parameter, Job job);
 

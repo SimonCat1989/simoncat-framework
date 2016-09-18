@@ -123,7 +123,7 @@ public class ExcelOperatorImpl implements ExcelOperator {
 	}
 
 	@Override
-	public <T> Collection<T> readAll(Parameter parameter, Class<T> instanceClass) {
+	public <T> List<T> readAll(Parameter parameter, Class<T> instanceClass) {
 		Objects.requireNonNull(parameter, "Can NOT do operations with EMPTY parameter.");
 
 		try (Workbook document = WorkbookFactory.create(new File(parameter.getFile()), parameter.getPassword())) {
@@ -143,7 +143,7 @@ public class ExcelOperatorImpl implements ExcelOperator {
 		return Collections.emptyList();
 	}
 
-	private <T> Collection<T> doReadAll(Workbook document, Class<T> instanceClass) throws NoSuchMethodException, SecurityException {
+	private <T> List<T> doReadAll(Workbook document, Class<T> instanceClass) throws NoSuchMethodException, SecurityException {
 		// Process @ExcelFileInfo
 		if (instanceClass.isAnnotationPresent(ExcelFileInfo.class)) {
 			List<ExcelCellMapping> mappingList = Lists.newArrayList();
