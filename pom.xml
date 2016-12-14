@@ -12,7 +12,6 @@
     <module>simoncat-framework-core</module>
     <module>simoncat-framework-spring</module>
     <module>simoncat-framework-serializer</module>
-    <module>simoncat-framework-config-client</module>
     <module>simoncat-framework-document-operator</module>
     <module>simoncat-framework-lucene</module>
     <module>simoncat-framework-graph</module>
