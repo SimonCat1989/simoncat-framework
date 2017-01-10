@@ -43,10 +43,6 @@
       <groupId>org.apache.poi</groupId>
       <artifactId>poi-ooxml</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi-examples</artifactId>
-    </dependency>
 
     <!-- Simple Log for Java -->
     <dependency>
@@ -58,17 +54,7 @@
       <artifactId>slf4j-simple</artifactId>
     </dependency>
 
-    <!-- Java Annotation -->
-    <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>annotations</artifactId>
-    </dependency>
-
     <!-- Spring -->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-    </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
@@ -89,6 +75,16 @@
     <dependency>
       <groupId>com.simoncat.framework</groupId>
       <artifactId>simoncat-framework-document-operator-annotation</artifactId>
+    </dependency>
+
+    <!-- Json -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
     </dependency>
   </dependencies>
 </project>
