@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>com.simoncat.framework</groupId>
+    <artifactId>simoncat-framework-build-base</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath />
+  </parent>
+  
+  <groupId>com.simoncat.framework</groupId>
+  <artifactId>simoncat-framework-synclock</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>simoncat-framework-synclock</name>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+  </dependencies>
+</project>
