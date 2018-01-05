@@ -1,13 +1,25 @@
 package com.simoncat.framework.redis;
 
+import java.util.Map;
+
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.cache.Cache;
 
+import com.google.common.collect.Maps;
+
+@RequiredArgsConstructor
 public class RedisCache implements Cache {
 
+    @NonNull
+    private final String cacheName;
+    
+    private final Map<Object, Object> localCache = Maps.newConcurrentMap();
 
     @Override
     public String getName() {
-        return null;
+        return this.cacheName;
     }
 
     @Override
@@ -22,16 +34,15 @@ public class RedisCache implements Cache {
         return null;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public <T> T get(Object key, Class<T> type) {
-        // TODO Auto-generated method stub
-        return null;
+        return (T) localCache.get(key);
     }
 
     @Override
     public void put(Object key, Object value) {
-        // TODO Auto-generated method stub
-
+        this.localCache.put(key, value);
     }
 
     @Override
