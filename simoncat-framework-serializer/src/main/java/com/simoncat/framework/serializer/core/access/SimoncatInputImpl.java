@@ -1,17 +1,16 @@
 package com.simoncat.framework.serializer.core.access;
 
+import com.esotericsoftware.kryo.Kryo;
+import com.esotericsoftware.kryo.io.Input;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import com.esotericsoftware.kryo.Kryo;
-import com.esotericsoftware.kryo.io.Input;
-import com.simoncat.framework.serializer.api.access.SimoncatInput;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SimoncatInputImpl implements SimoncatInput {
+public class SimoncatInputImpl implements com.simoncat.framework.serializer.api.access.Input {
 
 	private Kryo kryo;
 	private Input input;

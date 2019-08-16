@@ -7,7 +7,7 @@ import javax.annotation.CheckForNull;
  * 
  * @author Simon LUO (printscroll@163.com)
  */
-public interface SimoncatInput {
+public interface Input {
 
 	/**
 	 * Read String.

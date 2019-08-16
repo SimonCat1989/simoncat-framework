@@ -10,7 +10,7 @@ import com.esotericsoftware.kryo.KryoException;
  * 
  * @author Simon LUO (printscroll@163.com)
  */
-public interface SimoncatOutput {
+public interface Output {
 
 	/**
 	 * Write String.

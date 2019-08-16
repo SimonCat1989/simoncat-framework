@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-import org.apache.lucene.document.LongField;
+import org.apache.lucene.document.LongPoint;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
 
@@ -47,7 +47,8 @@ public class LuceneAnnotationCompiler {
 								fields.add(new StringField(luceneField.name(), convertToString(value), (isStored ? Field.Store.YES : Field.Store.NO)));
 								break;
 							case LONG_FIELD:
-								fields.add(new LongField(luceneField.name(), (Long) (value), (isStored ? Field.Store.YES : Field.Store.NO)));
+								// fields.add(new LongField(luceneField.name(), (Long) (value), (isStored ? Field.Store.YES : Field.Store.NO)));
+								fields.add(new LongPoint(luceneField.name(), (Long) (value)));
 								break;
 							case TEXT_FIELD:
 								fields.add(new TextField(luceneField.name(), convertToString(value), (isStored ? Field.Store.YES : Field.Store.NO)));
