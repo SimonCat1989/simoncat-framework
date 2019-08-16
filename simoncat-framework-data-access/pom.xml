@@ -9,7 +9,6 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>simoncat-framework-cassandra</module>
     <module>simoncat-framework-ehcache</module>
     <module>simoncat-framework-hbase</module>
     <module>simoncat-framework-mongodb</module>

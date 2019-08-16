@@ -1,6 +1,7 @@
 package com.simoncat.framework.redis;
 
 import java.util.Map;
+import java.util.concurrent.Callable;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -62,5 +63,11 @@ public class RedisCache implements Cache {
         // TODO Auto-generated method stub
 
     }
+
+	@Override
+	public <T> T get(Object key, Callable<T> valueLoader) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
