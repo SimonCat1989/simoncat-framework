@@ -16,5 +16,6 @@
     <module>simoncat-framework-graph</module>
     <module>simoncat-framework-web-crawler</module>
     <module>simoncat-framework-synclock</module>
+    <module>simoncat-framework-packet-sniffer</module>
   </modules>
 </project>
